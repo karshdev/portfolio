@@ -110,7 +110,7 @@ async function sendEmail(
   try {
     const resend = new Resend(apiKey);
     await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
+      from: "Portfolio Contact <contact@aakarshsharma.dev>",
       to,
       subject: `Portfolio contact from ${fromName}`,
       text: `From: ${fromName} <${fromEmail}>\n\n${message}`,
