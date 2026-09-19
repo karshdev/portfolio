@@ -18,6 +18,7 @@ export type SectionId =
   | "whoami"
   | "projects"
   | "experience"
+  | "activity"
   | "contact"
   | "help"
   | "boot";
@@ -26,6 +27,7 @@ export type CommandId =
   | "whoami"
   | "projects"
   | "experience"
+  | "activity"
   | "contact"
   | "help"
   | "clear"

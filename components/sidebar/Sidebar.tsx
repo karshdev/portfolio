@@ -16,6 +16,7 @@ const MENU: MenuItem[] = [
   { kind: "section", id: "whoami", label: "$ whoami", tag: "about" },
   { kind: "section", id: "projects", label: "$ projects", tag: "work" },
   { kind: "section", id: "experience", label: "$ experience", tag: "log" },
+  { kind: "section", id: "activity", label: "$ activity", tag: "graph" },
   { kind: "section", id: "contact", label: "$ contact", tag: "ping" },
 ];
 
@@ -31,7 +32,7 @@ export function Sidebar() {
   // observe scroll to update active section
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const ids: SectionId[] = ["whoami", "projects", "experience", "contact"];
+    const ids: SectionId[] = ["whoami", "projects", "experience", "activity", "contact"];
     const elements = ids
       .map((id) => ({ id, el: document.getElementById(`section-${id}`) }))
       .filter((x): x is { id: SectionId; el: HTMLElement } => Boolean(x.el));

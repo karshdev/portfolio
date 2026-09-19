@@ -15,6 +15,7 @@ export const SECTION_FOR: Partial<Record<CommandId, string>> = {
   whoami: "whoami",
   projects: "projects",
   experience: "experience",
+  activity: "activity",
   contact: "contact",
 };
 

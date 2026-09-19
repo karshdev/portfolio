@@ -8,20 +8,22 @@ import { Whoami } from "@/components/sections/Whoami";
 import { Projects } from "@/components/sections/Projects";
 import { Quote } from "@/components/sections/Quote";
 import { Experience } from "@/components/sections/Experience";
+import { Contributions } from "@/components/sections/Contributions";
 import { Contact } from "@/components/sections/Contact";
+import type { ContributionYear } from "@/lib/contributions";
 import { ProjectModal } from "@/components/sections/ProjectModal";
 import { CommandPalette } from "@/components/palette/CommandPalette";
 import { useGlobalShortcuts } from "@/lib/hooks/useGlobalShortcuts";
 
-export function Shell() {
+export function Shell({ contributions }: { contributions: ContributionYear[] }) {
   return (
     <ConsoleProvider>
-      <ShellInner />
+      <ShellInner contributions={contributions} />
     </ConsoleProvider>
   );
 }
 
-function ShellInner() {
+function ShellInner({ contributions }: { contributions: ContributionYear[] }) {
   useGlobalShortcuts();
 
   return (
@@ -54,6 +56,7 @@ function ShellInner() {
                 <Projects />
                 <Quote />
                 <Experience />
+                <Contributions years={contributions} />
                 <Contact />
               </div>
             </div>

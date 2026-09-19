@@ -41,6 +41,19 @@ export const commandsList: CommandSpec[] = [
     description: "highlights from my background",
   },
   {
+    id: "activity",
+    slashAliases: ["/activity", "/github", "/commits", "/contributions"],
+    patterns: [
+      /\b(commit|commits|contribution|contributions)\b/i,
+      // "github" alone means "what's your GitHub link" → that's /contact
+      /\bgithub\b.{0,20}\b(activity|graph|stats?|contributions?|commits?)\b/i,
+      /\b(how\s+)?(active|consistent)\b.{0,15}\b(are\s+you|is\s+he)\b/i,
+      /\b(streak|heatmap|green\s+squares?)\b/i,
+    ],
+    keywords: ["activity", "commit", "commits", "contribution", "contributions", "streak", "heatmap", "consistent"],
+    description: "github contribution graph",
+  },
+  {
     id: "contact",
     slashAliases: ["/contact", "/email", "/reach", "/hire"],
     patterns: [

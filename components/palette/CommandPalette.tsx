@@ -77,7 +77,7 @@ export function CommandPalette() {
   }, [open]);
 
   const items = useMemo<PaletteItem[]>(() => {
-    const sectionIds = ["whoami", "projects", "experience", "contact"] as const;
+    const sectionIds = ["whoami", "projects", "experience", "activity", "contact"] as const;
     const sectionItems: PaletteItem[] = sectionIds.map((id) => {
       const cmd = visibleCommands.find((c) => c.id === id);
       return {

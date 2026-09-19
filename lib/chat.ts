@@ -41,6 +41,13 @@ export function answerFor(cmdId: CommandId, arg?: string): ChatLines | null {
       ];
     }
 
+    case "activity":
+      return [
+        "public github contribution graph — 2024 through 2026.",
+        "daily commit counts only; client work lives in private repos.",
+        "scroll to ./activity for the heatmap and consistency stats.",
+      ];
+
     case "contact": {
       const email = contact.links.find((l) => l.id === "email")!.value;
       const gh = contact.links.find((l) => l.id === "github")!.value;
@@ -54,7 +61,7 @@ export function answerFor(cmdId: CommandId, arg?: string): ChatLines | null {
     case "help":
       return [
         "you can type slash commands or just ask in plain english.",
-        "/whoami · /projects · /experience · /contact",
+        "/whoami · /projects · /experience · /activity · /contact",
         "/open <project> · /clear · /theme retro · /theme default",
         "press ⌘K for the command palette · / to focus this prompt",
       ];
@@ -64,6 +71,7 @@ export function answerFor(cmdId: CommandId, arg?: string): ChatLines | null {
         "./whoami       quick intro",
         `./projects     ${projects.length} things i've shipped`,
         `./experience   ${experience.length} roles`,
+        "./activity     github contribution graph",
         "./contact      ways to reach me",
       ];
 

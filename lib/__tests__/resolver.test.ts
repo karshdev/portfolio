@@ -122,6 +122,24 @@ describe("resolver — natural language → /contact", () => {
   });
 });
 
+describe("resolver — natural language → /activity", () => {
+  const utterances = [
+    "your commits",
+    "contribution graph",
+    "github activity",
+    "github contributions",
+    "longest streak",
+    "show me the heatmap",
+  ];
+  it.each(utterances)("resolves: %s", (u) => {
+    expectId(u, "activity");
+  });
+
+  it("'your github' still means the contact link, not the graph", () => {
+    expectId("your github", "contact");
+  });
+});
+
 describe("resolver — natural language → /open", () => {
   // Derived from the real project list so adding/renaming a project can't
   // silently leave this suite testing IDs that no longer exist.
